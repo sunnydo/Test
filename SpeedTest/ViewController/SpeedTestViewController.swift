@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import ImageSlideshow
 
-class SpeedTestViewController: UIViewController {
 
+class SpeedTestViewController: UIViewController,UITableViewDataSource {
+//outlet
+    @IBOutlet weak var slideshowView: ImageSlideshow!
+    @IBOutlet weak var tableView: UITableView!
+    
+    //local properties
+    var dataSpeeds:NSArray = [];
+    
+    //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpSlideshow()
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +30,39 @@ class SpeedTestViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: - slideshow
+    func setUpSlideshow() {
+        slideshowView.backgroundColor = UIColor.white
+        slideshowView.slideshowInterval = 5.0
+        slideshowView.pageControlPosition = PageControlPosition.underScrollView
+        slideshowView.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
+        slideshowView.pageControl.pageIndicatorTintColor = UIColor.black
+        slideshowView.contentScaleMode = UIViewContentMode.scaleAspectFill
+        
+        // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
+        slideshowView.activityIndicator = DefaultActivityIndicator()
+        slideshowView.currentPageChanged = { page in
+            print("current page:", page)
+        }
+        
+        slideshowView.setImageInputs(getImagesForShowing())
     }
-    */
+    func getImagesForShowing() -> [AlamofireSource] {
+        let alamofireSource = [AlamofireSource(urlString: "http://dungvt1809-001-site1.atempurl.com/Resources/Slides/slide1.jpg")!, AlamofireSource(urlString: "http://dungvt1809-001-site1.atempurl.com/Resources/Slides/slide1.jpg")!, AlamofireSource(urlString: "http://dungvt1809-001-site1.atempurl.com/Resources/Slides/slide1.jpg")!]
+        return alamofireSource
+    }
+    
+    
+    //MARK: - table view
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSpeeds.count;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
 
 }

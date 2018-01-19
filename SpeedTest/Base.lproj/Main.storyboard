@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,7 +16,7 @@
         <!--News-->
         <scene sceneID="70q-ZL-G61">
             <objects>
-                <viewController id="kez-O8-56I" sceneMemberID="viewController">
+                <viewController id="kez-O8-56I" customClass="NewsViewController" customModule="SpeedTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fH7-49-q1a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,10 +142,10 @@
                                 <exclude reference="e3x-4B-sUt"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="VLb-Zy-DDY"/>
-                                <exclude reference="dWJ-LN-TUw"/>
                                 <exclude reference="saU-zf-N9N"/>
                                 <exclude reference="vOS-et-19d"/>
+                                <exclude reference="VLb-Zy-DDY"/>
+                                <exclude reference="dWJ-LN-TUw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -152,10 +153,10 @@
                                 <include reference="e3x-4B-sUt"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="VLb-Zy-DDY"/>
-                                <include reference="dWJ-LN-TUw"/>
                                 <include reference="saU-zf-N9N"/>
                                 <include reference="vOS-et-19d"/>
+                                <include reference="VLb-Zy-DDY"/>
+                                <include reference="dWJ-LN-TUw"/>
                             </mask>
                         </variation>
                     </view>
@@ -168,12 +169,12 @@
         <!--Speed Test-->
         <scene sceneID="H5d-KR-F6u">
             <objects>
-                <viewController id="TwP-mI-xH5" sceneMemberID="viewController">
+                <viewController id="TwP-mI-xH5" customClass="SpeedTestViewController" customModule="SpeedTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XOB-OK-brd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtN-kt-bE9">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtN-kt-bE9" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                 <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -370,6 +371,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TwP-mI-xH5" id="AUZ-th-dlB"/>
+                                    <outlet property="delegate" destination="TwP-mI-xH5" id="0N3-jq-kXh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.89754712581634521" green="0.73552262783050537" blue="0.38191050291061401" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -402,10 +407,6 @@
                                 <exclude reference="gr5-r1-O7v"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4hW-Cn-Nos"/>
-                                <exclude reference="LpW-sX-BrB"/>
-                                <exclude reference="UaE-GI-MtR"/>
-                                <exclude reference="p3U-iK-27p"/>
                                 <exclude reference="5vW-UB-pYc"/>
                                 <exclude reference="Q5X-mC-ZF2"/>
                                 <exclude reference="q0M-9n-x9g"/>
@@ -419,6 +420,10 @@
                                 <exclude reference="wHX-Qa-Tsw"/>
                                 <exclude reference="UCg-Vq-4Ie"/>
                                 <exclude reference="X2i-Ys-ZAf"/>
+                                <exclude reference="4hW-Cn-Nos"/>
+                                <exclude reference="LpW-sX-BrB"/>
+                                <exclude reference="UaE-GI-MtR"/>
+                                <exclude reference="p3U-iK-27p"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -430,10 +435,6 @@
                                 <include reference="gr5-r1-O7v"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4hW-Cn-Nos"/>
-                                <include reference="LpW-sX-BrB"/>
-                                <include reference="UaE-GI-MtR"/>
-                                <include reference="p3U-iK-27p"/>
                                 <exclude reference="5vW-UB-pYc"/>
                                 <include reference="Q5X-mC-ZF2"/>
                                 <include reference="q0M-9n-x9g"/>
@@ -447,10 +448,18 @@
                                 <include reference="wHX-Qa-Tsw"/>
                                 <include reference="UCg-Vq-4Ie"/>
                                 <include reference="X2i-Ys-ZAf"/>
+                                <include reference="4hW-Cn-Nos"/>
+                                <include reference="LpW-sX-BrB"/>
+                                <include reference="UaE-GI-MtR"/>
+                                <include reference="p3U-iK-27p"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Speed Test" image="speed" selectedImage="speed" id="w6H-57-NmG"/>
+                    <connections>
+                        <outlet property="slideshowView" destination="xtN-kt-bE9" id="IZg-Qz-MiW"/>
+                        <outlet property="tableView" destination="gr5-r1-O7v" id="7Dt-m2-n1p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHj-1D-4n1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
