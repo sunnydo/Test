@@ -15,6 +15,7 @@
 		260852A72010907F00446F1D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260852A62010907F00446F1D /* NewsViewController.swift */; };
 		2698FD072011ED5B00BA94F5 /* SpeedTestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698FD062011ED5B00BA94F5 /* SpeedTestTableViewCell.swift */; };
 		2698FD092011ED7100BA94F5 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698FD082011ED7100BA94F5 /* NewsTableViewCell.swift */; };
+		2698FD0C2011F1A400BA94F5 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698FD0B2011F1A400BA94F5 /* Speed.swift */; };
 		5DE36060F95C9ED85B58BF1A /* Pods_SpeedTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7766FD53AD5210A9414D47D0 /* Pods_SpeedTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		260852A62010907F00446F1D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		2698FD062011ED5B00BA94F5 /* SpeedTestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestTableViewCell.swift; sourceTree = "<group>"; };
 		2698FD082011ED7100BA94F5 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		2698FD0B2011F1A400BA94F5 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		630A63D2FC08F8EF3BFC6EDE /* Pods-SpeedTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest.release.xcconfig"; sourceTree = "<group>"; };
 		7766FD53AD5210A9414D47D0 /* Pods_SpeedTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E40D04AB8ED6FDDEFD96EE /* Pods-SpeedTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		2608529020107F0200446F1D /* SpeedTest */ = {
 			isa = PBXGroup;
 			children = (
+				2698FD0A2011F17400BA94F5 /* Model */,
 				2698FD052011ED2100BA94F5 /* Controls */,
 				2698FD042011E64600BA94F5 /* API */,
 				260852A32010904B00446F1D /* ViewController */,
@@ -102,6 +105,14 @@
 				2698FD082011ED7100BA94F5 /* NewsTableViewCell.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		2698FD0A2011F17400BA94F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2698FD0B2011F1A400BA94F5 /* Speed.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		546400B47334056DC7588D14 /* Pods */ = {
@@ -247,6 +258,7 @@
 				260852A72010907F00446F1D /* NewsViewController.swift in Sources */,
 				260852A52010906600446F1D /* SpeedTestViewController.swift in Sources */,
 				2698FD092011ED7100BA94F5 /* NewsTableViewCell.swift in Sources */,
+				2698FD0C2011F1A400BA94F5 /* Speed.swift in Sources */,
 				2608529220107F0200446F1D /* AppDelegate.swift in Sources */,
 				2698FD072011ED5B00BA94F5 /* SpeedTestTableViewCell.swift in Sources */,
 			);

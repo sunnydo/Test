@@ -16,7 +16,7 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     //local properties
-    var dataSpeeds:NSArray = [];
+    var dataSpeeds = [Speed]();
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -62,7 +62,9 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SpeedCell", for: indexPath) as! SpeedTestTableViewCell
+        cell.speedInfo = dataSpeeds[indexPath.row];
+        return cell;
     }
 
 }

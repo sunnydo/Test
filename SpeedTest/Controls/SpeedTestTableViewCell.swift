@@ -10,6 +10,18 @@ import UIKit
 
 class SpeedTestTableViewCell: UITableViewCell {
 
+    //outlet
+    @IBOutlet weak var domainLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var openButton: UIButton!
+    
+    var speedInfo:Speed? {
+        didSet {
+            self.domainLabel.text = speedInfo?.domainString
+            self.speedLabel.text = String(describing: speedInfo?.speedMs)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
