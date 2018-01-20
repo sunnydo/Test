@@ -17,12 +17,23 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
     
     //local properties
     var dataSpeeds = [Speed]();
-    
+    var firstTime = true;
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSlideshow()
+        setupSpeedTest()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if (!firstTime) {
+            setUpSlideshow()
+            setupSpeedTest()
+        }
+        if(firstTime) {
+            firstTime = false;
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,11 +56,24 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
             print("current page:", page)
         }
         
-        slideshowView.setImageInputs(getImagesForShowing())
+        getImagesForShowing { (slides) in
+            self.slideshowView.setImageInputs(slides)
+        }
     }
-    func getImagesForShowing() -> [AlamofireSource] {
-        let alamofireSource = [AlamofireSource(urlString: "http://dungvt1809-001-site1.atempurl.com/Resources/Slides/slide1.jpg")!, AlamofireSource(urlString: "http://dungvt1809-001-site1.atempurl.com/Resources/Slides/slide1.jpg")!, AlamofireSource(urlString: "http://dungvt1809-001-site1.atempurl.com/Resources/Slides/slide1.jpg")!]
-        return alamofireSource
+    func getImagesForShowing(completion:@escaping (_ slides:[AlamofireSource]) -> Void) {
+        ServerAPI.shared.getSlideAPI { (slides) in
+            completion( slides)
+        }
+    }
+    
+    //MARK: - get test speed data
+    func setupSpeedTest () {
+        ServerAPI.shared.getSpeedAPI { (speedResults) in
+            self.dataSpeeds = speedResults
+            DispatchQueue.main.async { [unowned self] in
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
@@ -65,6 +89,16 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpeedCell", for: indexPath) as! SpeedTestTableViewCell
         cell.speedInfo = dataSpeeds[indexPath.row];
         return cell;
+    }
+    
+    // MARK: - Pull to refresh
+    func configPullToRefesh(){
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector(("refresh:")), for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
+    func refresh(refreshControl:UIRefreshControl) {
+        setupSpeedTest()
     }
 
 }

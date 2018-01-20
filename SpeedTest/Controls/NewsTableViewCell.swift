@@ -9,7 +9,14 @@
 import UIKit
 
 class NewsTableViewCell: UITableViewCell {
-
+    var news:News! {
+        didSet {
+            UIImageView.getImageFromURL(urlString: news.titleURLString!, completion: { (imageData) in
+                let originImage:UIImage = UIImage(data: imageData!)!
+                self.titleImage.image = originImage
+            })
+        }
+    }
     @IBOutlet weak var titleImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

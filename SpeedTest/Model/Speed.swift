@@ -12,7 +12,7 @@ class Speed {
     var domainString:String?
     var speedMs:Int?
     init (dict:NSDictionary) {
-        self.domainString = dict[""] as? String;
-        self.speedMs = dict[""] as? Int;
+        self.domainString = dict["DomainName"] as? String;
+        self.speedMs = dict["Speed"] as? Int;
     }
 }

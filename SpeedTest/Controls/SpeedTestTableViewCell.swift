@@ -17,14 +17,17 @@ class SpeedTestTableViewCell: UITableViewCell {
     
     var speedInfo:Speed? {
         didSet {
-            self.domainLabel.text = speedInfo?.domainString
-            self.speedLabel.text = String(describing: speedInfo?.speedMs)
+            self.domainLabel.text = speedInfo?.domainString!
+            self.speedLabel.text = String(describing: speedInfo?.speedMs!)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        domainLabel.layer.masksToBounds = true
+        speedLabel.layer.masksToBounds = true
+        openButton.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,4 +36,9 @@ class SpeedTestTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func touchUpInsideOpen(_ sender: UIButton) {
+        if let url = URL(string:(speedInfo?.domainString)!) {
+            UIApplication.shared.openURL(url)
+        }
+    }
 }

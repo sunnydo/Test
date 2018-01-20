@@ -17,6 +17,12 @@
 		2698FD092011ED7100BA94F5 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698FD082011ED7100BA94F5 /* NewsTableViewCell.swift */; };
 		2698FD0C2011F1A400BA94F5 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698FD0B2011F1A400BA94F5 /* Speed.swift */; };
 		5DE36060F95C9ED85B58BF1A /* Pods_SpeedTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7766FD53AD5210A9414D47D0 /* Pods_SpeedTest.framework */; };
+		A30A59712012FEED00515510 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A59702012FEED00515510 /* UIImageView+Extension.swift */; };
+		A30A5973201307DD00515510 /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A5972201307DD00515510 /* ServerAPI.swift */; };
+		A30A597520130DA400515510 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A597420130DA400515510 /* News.swift */; };
+		A30A597720130DB200515510 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A597620130DB200515510 /* Slide.swift */; };
+		A30A59792013501300515510 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A59782013501300515510 /* NewsDetailViewController.swift */; };
+		A30A597B2013766800515510 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A597A2013766800515510 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,12 @@
 		2698FD0B2011F1A400BA94F5 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		630A63D2FC08F8EF3BFC6EDE /* Pods-SpeedTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest.release.xcconfig"; sourceTree = "<group>"; };
 		7766FD53AD5210A9414D47D0 /* Pods_SpeedTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30A59702012FEED00515510 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		A30A5972201307DD00515510 /* ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServerAPI.swift; path = SpeedTest/Extension/ServerAPI.swift; sourceTree = SOURCE_ROOT; };
+		A30A597420130DA400515510 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		A30A597620130DB200515510 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		A30A59782013501300515510 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		A30A597A2013766800515510 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F1E40D04AB8ED6FDDEFD96EE /* Pods-SpeedTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +81,7 @@
 		2608529020107F0200446F1D /* SpeedTest */ = {
 			isa = PBXGroup;
 			children = (
+				A30A596F2012FEC800515510 /* Extension */,
 				2698FD0A2011F17400BA94F5 /* Model */,
 				2698FD052011ED2100BA94F5 /* Controls */,
 				2698FD042011E64600BA94F5 /* API */,
@@ -87,6 +100,7 @@
 			children = (
 				260852A42010906600446F1D /* SpeedTestViewController.swift */,
 				260852A62010907F00446F1D /* NewsViewController.swift */,
+				A30A59782013501300515510 /* NewsDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -94,6 +108,7 @@
 		2698FD042011E64600BA94F5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A30A5972201307DD00515510 /* ServerAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -111,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				2698FD0B2011F1A400BA94F5 /* Speed.swift */,
+				A30A597420130DA400515510 /* News.swift */,
+				A30A597620130DB200515510 /* Slide.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +139,15 @@
 				630A63D2FC08F8EF3BFC6EDE /* Pods-SpeedTest.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A30A596F2012FEC800515510 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A30A59702012FEED00515510 /* UIImageView+Extension.swift */,
+				A30A597A2013766800515510 /* Constants.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E443822B8AF9242469149474 /* Frameworks */ = {
@@ -209,9 +235,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -224,13 +257,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpeedTest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B2786D0B5D5D33A10EE025C /* [CP] Copy Pods Resources */ = {
@@ -257,10 +293,16 @@
 			files = (
 				260852A72010907F00446F1D /* NewsViewController.swift in Sources */,
 				260852A52010906600446F1D /* SpeedTestViewController.swift in Sources */,
+				A30A59712012FEED00515510 /* UIImageView+Extension.swift in Sources */,
+				A30A597520130DA400515510 /* News.swift in Sources */,
+				A30A5973201307DD00515510 /* ServerAPI.swift in Sources */,
 				2698FD092011ED7100BA94F5 /* NewsTableViewCell.swift in Sources */,
+				A30A59792013501300515510 /* NewsDetailViewController.swift in Sources */,
 				2698FD0C2011F1A400BA94F5 /* Speed.swift in Sources */,
 				2608529220107F0200446F1D /* AppDelegate.swift in Sources */,
 				2698FD072011ED5B00BA94F5 /* SpeedTestTableViewCell.swift in Sources */,
+				A30A597720130DB200515510 /* Slide.swift in Sources */,
+				A30A597B2013766800515510 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
