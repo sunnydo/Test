@@ -23,10 +23,18 @@
 		A30A597720130DB200515510 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A597620130DB200515510 /* Slide.swift */; };
 		A30A59792013501300515510 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A59782013501300515510 /* NewsDetailViewController.swift */; };
 		A30A597B2013766800515510 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A597A2013766800515510 /* Constants.swift */; };
+		A35A8BFD201429250032C04E /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF2201429240032C04E /* DesignableView.swift */; };
+		A35A8BFE201429250032C04E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF3201429240032C04E /* LoadingView.swift */; };
+		A35A8BFF201429250032C04E /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A35A8BF4201429240032C04E /* LoadingView.xib */; };
+		A35A8C01201429250032C04E /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF6201429240032C04E /* Spring.swift */; };
+		A35A8C02201429250032C04E /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF7201429240032C04E /* SpringAnimation.swift */; };
+		A35A8C03201429250032C04E /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF8201429240032C04E /* SpringView.swift */; };
+		A35A8C0620142C3A0032C04E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A8C0520142C3A0032C04E /* Images.xcassets */; };
+		A35A8C0820142D930032C04E /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8C0720142D930032C04E /* Misc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2608528E20107F0200446F1D /* SpeedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2608528E20107F0200446F1D /* 乐发赛车.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "乐发赛车.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2608529120107F0200446F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2608529620107F0200446F1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2608529820107F0200446F1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,11 +48,19 @@
 		630A63D2FC08F8EF3BFC6EDE /* Pods-SpeedTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest.release.xcconfig"; sourceTree = "<group>"; };
 		7766FD53AD5210A9414D47D0 /* Pods_SpeedTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30A59702012FEED00515510 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
-		A30A5972201307DD00515510 /* ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServerAPI.swift; path = SpeedTest/Extension/ServerAPI.swift; sourceTree = SOURCE_ROOT; };
+		A30A5972201307DD00515510 /* ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServerAPI.swift; path = SpeedTest/API/ServerAPI.swift; sourceTree = SOURCE_ROOT; };
 		A30A597420130DA400515510 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		A30A597620130DB200515510 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		A30A59782013501300515510 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		A30A597A2013766800515510 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A35A8BF2201429240032C04E /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		A35A8BF3201429240032C04E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A35A8BF4201429240032C04E /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		A35A8BF6201429240032C04E /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		A35A8BF7201429240032C04E /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		A35A8BF8201429240032C04E /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		A35A8C0520142C3A0032C04E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A35A8C0720142D930032C04E /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		F1E40D04AB8ED6FDDEFD96EE /* Pods-SpeedTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +89,7 @@
 		2608528F20107F0200446F1D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2608528E20107F0200446F1D /* SpeedTest.app */,
+				2608528E20107F0200446F1D /* 乐发赛车.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,10 +97,11 @@
 		2608529020107F0200446F1D /* SpeedTest */ = {
 			isa = PBXGroup;
 			children = (
+				A35A8C0B20145B190032C04E /* API */,
+				A35A8BED201429240032C04E /* Library */,
 				A30A596F2012FEC800515510 /* Extension */,
 				2698FD0A2011F17400BA94F5 /* Model */,
 				2698FD052011ED2100BA94F5 /* Controls */,
-				2698FD042011E64600BA94F5 /* API */,
 				260852A32010904B00446F1D /* ViewController */,
 				2608529120107F0200446F1D /* AppDelegate.swift */,
 				2608529520107F0200446F1D /* Main.storyboard */,
@@ -103,14 +120,6 @@
 				A30A59782013501300515510 /* NewsDetailViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		2698FD042011E64600BA94F5 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				A30A5972201307DD00515510 /* ServerAPI.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		2698FD052011ED2100BA94F5 /* Controls */ = {
@@ -150,6 +159,53 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		A35A8BED201429240032C04E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A35A8BEE201429240032C04E /* Spring */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		A35A8BEE201429240032C04E /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				A35A8BF1201429240032C04E /* Spring */,
+				A35A8BF9201429240032C04E /* SpringApp */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		A35A8BF1201429240032C04E /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				A35A8C0720142D930032C04E /* Misc.swift */,
+				A35A8BF2201429240032C04E /* DesignableView.swift */,
+				A35A8BF3201429240032C04E /* LoadingView.swift */,
+				A35A8BF4201429240032C04E /* LoadingView.xib */,
+				A35A8BF6201429240032C04E /* Spring.swift */,
+				A35A8BF7201429240032C04E /* SpringAnimation.swift */,
+				A35A8BF8201429240032C04E /* SpringView.swift */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		A35A8BF9201429240032C04E /* SpringApp */ = {
+			isa = PBXGroup;
+			children = (
+				A35A8C0520142C3A0032C04E /* Images.xcassets */,
+			);
+			path = SpringApp;
+			sourceTree = "<group>";
+		};
+		A35A8C0B20145B190032C04E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A30A5972201307DD00515510 /* ServerAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		E443822B8AF9242469149474 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +234,7 @@
 			);
 			name = SpeedTest;
 			productName = SpeedTest;
-			productReference = 2608528E20107F0200446F1D /* SpeedTest.app */;
+			productReference = 2608528E20107F0200446F1D /* 乐发赛车.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2608529C20107F0200446F1D /* LaunchScreen.storyboard in Resources */,
+				A35A8C0620142C3A0032C04E /* Images.xcassets in Resources */,
 				2608529920107F0200446F1D /* Assets.xcassets in Resources */,
+				A35A8BFF201429250032C04E /* LoadingView.xib in Resources */,
 				2608529720107F0200446F1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,12 +350,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				260852A72010907F00446F1D /* NewsViewController.swift in Sources */,
+				A35A8C02201429250032C04E /* SpringAnimation.swift in Sources */,
 				260852A52010906600446F1D /* SpeedTestViewController.swift in Sources */,
+				A35A8C0820142D930032C04E /* Misc.swift in Sources */,
 				A30A59712012FEED00515510 /* UIImageView+Extension.swift in Sources */,
+				A35A8BFD201429250032C04E /* DesignableView.swift in Sources */,
 				A30A597520130DA400515510 /* News.swift in Sources */,
+				A35A8BFE201429250032C04E /* LoadingView.swift in Sources */,
 				A30A5973201307DD00515510 /* ServerAPI.swift in Sources */,
 				2698FD092011ED7100BA94F5 /* NewsTableViewCell.swift in Sources */,
 				A30A59792013501300515510 /* NewsDetailViewController.swift in Sources */,
+				A35A8C03201429250032C04E /* SpringView.swift in Sources */,
+				A35A8C01201429250032C04E /* Spring.swift in Sources */,
 				2698FD0C2011F1A400BA94F5 /* Speed.swift in Sources */,
 				2608529220107F0200446F1D /* AppDelegate.swift in Sources */,
 				2698FD072011ED5B00BA94F5 /* SpeedTestTableViewCell.swift in Sources */,
@@ -445,9 +509,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "乐发赛车";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -461,9 +525,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "乐发赛车";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

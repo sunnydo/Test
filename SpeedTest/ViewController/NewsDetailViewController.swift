@@ -10,6 +10,7 @@ import UIKit
 
 class NewsDetailViewController: UIViewController {
 
+    @IBOutlet weak var loadingView: SpringView!
     @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var detailImage: UIImageView!
     var imageURL:String!
@@ -17,6 +18,7 @@ class NewsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadingView.showLoading()
         loadImage()
         // Do any additional setup after loading the view.
     }
@@ -36,7 +38,11 @@ class NewsDetailViewController: UIViewController {
             //-> height imagview
             let heightImageViewNew = ratio * originImage.size.height
             print(heightImageViewNew)
-            self.heightImageConstraint.constant = heightImageViewNew
+            DispatchQueue.main.async { [unowned self] in
+                self.heightImageConstraint.constant = heightImageViewNew
+                self.detailImage.image = UIImage(data: imageData!)
+                self.loadingView.hideLoading()
+            }
             
         })
     }

@@ -13,7 +13,9 @@ class NewsTableViewCell: UITableViewCell {
         didSet {
             UIImageView.getImageFromURL(urlString: news.titleURLString!, completion: { (imageData) in
                 let originImage:UIImage = UIImage(data: imageData!)!
-                self.titleImage.image = originImage
+                DispatchQueue.main.async { [unowned self] in
+                    self.titleImage.image = originImage
+                }
             })
         }
     }

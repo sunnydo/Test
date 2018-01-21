@@ -12,21 +12,29 @@ import ImageSlideshow
 
 class SpeedTestViewController: UIViewController,UITableViewDataSource {
 //outlet
+    @IBOutlet weak var loadingView: SpringView!
     @IBOutlet weak var slideshowView: ImageSlideshow!
     @IBOutlet weak var tableView: UITableView!
     
     //local properties
     var dataSpeeds = [Speed]();
     var firstTime = true;
+    private let refreshControl = UIRefreshControl()
+    
+    
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        loadingView.showLoading()
         setUpSlideshow()
         setupSpeedTest()
+        configPullToRefesh()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         if (!firstTime) {
+            loadingView.showLoading()
             setUpSlideshow()
             setupSpeedTest()
         }
@@ -43,11 +51,11 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
     
     //MARK: - slideshow
     func setUpSlideshow() {
-        slideshowView.backgroundColor = UIColor.white
+        slideshowView.backgroundColor = UIColor.black
         slideshowView.slideshowInterval = 5.0
         slideshowView.pageControlPosition = PageControlPosition.underScrollView
-        slideshowView.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
-        slideshowView.pageControl.pageIndicatorTintColor = UIColor.black
+        slideshowView.pageControl.currentPageIndicatorTintColor = UIColor.white
+        slideshowView.pageControl.pageIndicatorTintColor = UIColor.lightGray
         slideshowView.contentScaleMode = UIViewContentMode.scaleAspectFill
         
         // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
@@ -72,6 +80,8 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
             self.dataSpeeds = speedResults
             DispatchQueue.main.async { [unowned self] in
                 self.tableView.reloadData()
+                self.loadingView.hideLoading()
+                self.refreshControl.endRefreshing()
             }
         }
     }
@@ -93,11 +103,17 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
     
     // MARK: - Pull to refresh
     func configPullToRefesh(){
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector(("refresh:")), for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string: "加载中 ...",attributes: [NSAttributedStringKey.foregroundColor: UIColor(red: 216.0/255.0, green: 211.0/255.0, blue: 235.0/255.0, alpha: 1.0)])
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refresh(refreshControl:)), for: .valueChanged)
         self.tableView.addSubview(refreshControl)
     }
-    func refresh(refreshControl:UIRefreshControl) {
+    @objc func refresh(refreshControl:UIRefreshControl) {
         setupSpeedTest()
     }
 

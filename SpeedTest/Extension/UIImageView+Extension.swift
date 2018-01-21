@@ -28,17 +28,18 @@ extension UIImageView{
                 return
             }else{
                 let url = Foundation.URL(string: urlString)!
-                let downloadTask: URLSessionDataTask = URLSession.shared.dataTask(with: url, completionHandler: { (data:Data?, response:URLResponse?, error:NSError?) in
+                let request = URLRequest(url: url)
+                let downloadTask: URLSessionDataTask = URLSession.shared.dataTask(with: request, completionHandler: { (responseData, response, error) -> Void in
                     if (error != nil) {
                         completion(nil)
                         return
                     }
-                    if let data = data {
+                    if let data = responseData {
                         manager.createFile(atPath: myFilePath, contents: data, attributes: nil)
                         completion(data)
                         return
                     }
-                    } as! (Data?, URLResponse?, Error?) -> Void)
+                    })
                 downloadTask.resume()
             }
         }
