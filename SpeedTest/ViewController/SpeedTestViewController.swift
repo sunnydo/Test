@@ -82,10 +82,22 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
                 self.tableView.reloadData()
                 self.loadingView.hideLoading()
                 self.refreshControl.endRefreshing()
+                self.sendPing()
             }
         }
     }
-    
+    var ss = [SimplePingClient]()
+    func sendPing () {
+        ss.removeAll()
+        for i in dataSpeeds {
+            let s = SimplePingClient()
+            ss.append(s)
+            s.pingHostname(hostname: i.domainString!, andResultCallback: { (str) in
+                NSLog("______\(i.domainString!) is \(str!) ms")
+            })
+        }
+        //ss.removeAll()
+    }
     
     //MARK: - table view
     func numberOfSections(in tableView: UITableView) -> Int {

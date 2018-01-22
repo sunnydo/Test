@@ -31,6 +31,8 @@
 		A35A8C03201429250032C04E /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF8201429240032C04E /* SpringView.swift */; };
 		A35A8C0620142C3A0032C04E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A8C0520142C3A0032C04E /* Images.xcassets */; };
 		A35A8C0820142D930032C04E /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8C0720142D930032C04E /* Misc.swift */; };
+		A35A8C0D2016310C0032C04E /* SimplePingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8C0C2016310C0032C04E /* SimplePingClient.swift */; };
+		A35A8C112016319F0032C04E /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = A35A8C102016319F0032C04E /* SimplePing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,10 @@
 		A35A8BF8201429240032C04E /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
 		A35A8C0520142C3A0032C04E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A35A8C0720142D930032C04E /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		A35A8C0C2016310C0032C04E /* SimplePingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePingClient.swift; sourceTree = "<group>"; };
+		A35A8C0F2016319F0032C04E /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		A35A8C102016319F0032C04E /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		A35A8C12201631CD0032C04E /* SpeedTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeedTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		F1E40D04AB8ED6FDDEFD96EE /* Pods-SpeedTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedTest/Pods-SpeedTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +114,7 @@
 				2608529820107F0200446F1D /* Assets.xcassets */,
 				2608529A20107F0200446F1D /* LaunchScreen.storyboard */,
 				2608529D20107F0200446F1D /* Info.plist */,
+				A35A8C12201631CD0032C04E /* SpeedTest-Bridging-Header.h */,
 			);
 			path = SpeedTest;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 		A35A8BED201429240032C04E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				A35A8C0E2016319F0032C04E /* Common */,
 				A35A8BEE201429240032C04E /* Spring */,
 			);
 			path = Library;
@@ -202,8 +210,18 @@
 			isa = PBXGroup;
 			children = (
 				A30A5972201307DD00515510 /* ServerAPI.swift */,
+				A35A8C0C2016310C0032C04E /* SimplePingClient.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		A35A8C0E2016319F0032C04E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A35A8C0F2016319F0032C04E /* SimplePing.h */,
+				A35A8C102016319F0032C04E /* SimplePing.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E443822B8AF9242469149474 /* Frameworks */ = {
@@ -352,12 +370,14 @@
 				260852A72010907F00446F1D /* NewsViewController.swift in Sources */,
 				A35A8C02201429250032C04E /* SpringAnimation.swift in Sources */,
 				260852A52010906600446F1D /* SpeedTestViewController.swift in Sources */,
+				A35A8C112016319F0032C04E /* SimplePing.m in Sources */,
 				A35A8C0820142D930032C04E /* Misc.swift in Sources */,
 				A30A59712012FEED00515510 /* UIImageView+Extension.swift in Sources */,
 				A35A8BFD201429250032C04E /* DesignableView.swift in Sources */,
 				A30A597520130DA400515510 /* News.swift in Sources */,
 				A35A8BFE201429250032C04E /* LoadingView.swift in Sources */,
 				A30A5973201307DD00515510 /* ServerAPI.swift in Sources */,
+				A35A8C0D2016310C0032C04E /* SimplePingClient.swift in Sources */,
 				2698FD092011ED7100BA94F5 /* NewsTableViewCell.swift in Sources */,
 				A30A59792013501300515510 /* NewsDetailViewController.swift in Sources */,
 				A35A8C03201429250032C04E /* SpringView.swift in Sources */,
@@ -510,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
 				PRODUCT_NAME = "乐发赛车";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeedTest/SpeedTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -526,6 +547,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
 				PRODUCT_NAME = "乐发赛车";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeedTest/SpeedTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
