@@ -20,7 +20,7 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
     var dataSpeeds = [Speed]();
     var firstTime = true;
     private let refreshControl = UIRefreshControl()
-    
+    var pingClients = [SimplePingClient]()
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -86,17 +86,25 @@ class SpeedTestViewController: UIViewController,UITableViewDataSource {
             }
         }
     }
-    var ss = [SimplePingClient]()
+    
     func sendPing () {
-        ss.removeAll()
-        for i in dataSpeeds {
-            let s = SimplePingClient()
-            ss.append(s)
-            s.pingHostname(hostname: i.domainString!, andResultCallback: { (str) in
-                NSLog("______\(i.domainString!) is \(str!) ms")
+        pingClients.removeAll()
+        for var i in (0..<dataSpeeds.count) {
+            let data = dataSpeeds[i]
+            let ping = SimplePingClient()
+            pingClients.append(ping)
+            ping.pingHostname(hostname: data.domainString!, andResultCallback: { (str) in
+                data.speedMs = str;
+                NSLog("___\(data.domainString) : \(data.speedMs)")
+                //reload ceel at index path
+                 DispatchQueue.main.async { [unowned self] in
+                    let indexPath = IndexPath(row: i, section: 0)
+                    if((self.tableView.cellForRow(at: indexPath)) != nil){
+                        self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+                    }
+                }
             })
         }
-        //ss.removeAll()
     }
     
     //MARK: - table view

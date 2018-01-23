@@ -11,15 +11,24 @@ import UIKit
 class NewsTableViewCell: UITableViewCell {
     var news:News! {
         didSet {
-            UIImageView.getImageFromURL(urlString: news.titleURLString!, completion: { (imageData) in
-                let originImage:UIImage = UIImage(data: imageData!)!
-                DispatchQueue.main.async { [unowned self] in
-                    self.titleImage.image = originImage
-                }
-            })
+            if let url  = news.titleURLString {
+                loadingIndicator.startAnimating()
+                UIImageView.getImageFromURL(urlString: url, completion: { (imageData) in
+                   DispatchQueue.main.async { [unowned self] in self.loadingIndicator.stopAnimating()
+                    }
+                    if let data = imageData{
+                        let originImage:UIImage = UIImage(data: data)!
+                        DispatchQueue.main.async { [unowned self] in
+                            self.titleImage.image = originImage
+                        }
+                    }
+                    
+                })
+            }
         }
     }
     @IBOutlet weak var titleImage: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

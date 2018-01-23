@@ -31,6 +31,9 @@ class NewsDetailViewController: UIViewController {
 
     // MARK: - Image
     func loadImage () {
+        if(imageURL == nil) {
+            return
+        }
         UIImageView.getImageFromURL(urlString: imageURL, completion: { (imageData) in
             let originImage:UIImage = UIImage(data: imageData!)!
             //get ratio

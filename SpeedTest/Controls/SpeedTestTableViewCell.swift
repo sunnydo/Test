@@ -17,8 +17,13 @@ class SpeedTestTableViewCell: UITableViewCell {
     
     var speedInfo:Speed? {
         didSet {
-            self.domainLabel.text = speedInfo?.domainString!
-            //self.speedLabel.text = String(describing: speedInfo!.speedMs!)
+            if let domain = speedInfo?.domainString {
+                self.domainLabel.text = domain
+            }
+            if let ms = speedInfo?.speedMs {
+                self.speedLabel.text = ms
+            }
+            
         }
     }
     
