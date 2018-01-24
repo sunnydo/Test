@@ -15,15 +15,16 @@ class NewsTableViewCell: UITableViewCell {
                 loadingIndicator.startAnimating()
                 UIImageView.getImageFromURL(urlString: url, completion: { (imageData) in
                    DispatchQueue.main.async { [unowned self] in self.loadingIndicator.stopAnimating()
-                    }
-                    if let data = imageData{
-                        let originImage:UIImage = UIImage(data: data)!
-                        DispatchQueue.main.async { [unowned self] in
-                            self.titleImage.image = originImage
+                        if let data = imageData{
+                            self.titleImage.image = UIImage(data: data)
+                        } else {
+                            self.titleImage.image = UIImage(named:"pagenotfound")
                         }
                     }
-                    
                 })
+            } else {
+                self.loadingIndicator.stopAnimating()
+                self.titleImage.image = UIImage(named:"pagenotfound")
             }
         }
     }

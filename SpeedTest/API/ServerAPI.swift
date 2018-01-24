@@ -59,7 +59,9 @@ class ServerAPI {
             let speeds:[NSDictionary] = dict["Content"] as! [NSDictionary]
             for s:NSDictionary in speeds {
                 let speedObject:Speed = Speed(dict:s)
-                speedObjects.append(speedObject)
+                if( speedObject.domainString != nil  ) {
+                    speedObjects.append(speedObject)
+                }
             }
             completion(speedObjects)
         }

@@ -35,7 +35,13 @@ class NewsDetailViewController: UIViewController {
             return
         }
         UIImageView.getImageFromURL(urlString: imageURL, completion: { (imageData) in
-            let originImage:UIImage = UIImage(data: imageData!)!
+            let originImage:UIImage!
+            if(imageData == nil) {
+                originImage = UIImage(named:"pagenotfound")
+            } else {
+                originImage = UIImage(data: imageData!)!
+            }
+            
             //get ratio
             let ratio:CGFloat = UIScreen.main.bounds.width / originImage.size.width
             //-> height imagview
@@ -43,7 +49,7 @@ class NewsDetailViewController: UIViewController {
             print(heightImageViewNew)
             DispatchQueue.main.async { [unowned self] in
                 self.heightImageConstraint.constant = heightImageViewNew
-                self.detailImage.image = UIImage(data: imageData!)
+                self.detailImage.image = originImage
                 self.loadingView.hideLoading()
             }
             
