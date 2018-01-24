@@ -18,7 +18,7 @@ class ServerAPI {
         return Static.instance
     }
     
-    let serverDomain = "http://dungvt1809-001-site1.atempurl.com/"
+    let serverDomain = "http://fa66.me/"
     let apiSpeed = "api/SpeedTest/GetDomains"
     let apiNews = "api/SpeedTest/GetNews"
     let apiSlide = "api/SpeedTest/GetSlides"
