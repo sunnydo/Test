@@ -29,7 +29,6 @@
 		A35A8C01201429250032C04E /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF6201429240032C04E /* Spring.swift */; };
 		A35A8C02201429250032C04E /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF7201429240032C04E /* SpringAnimation.swift */; };
 		A35A8C03201429250032C04E /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF8201429240032C04E /* SpringView.swift */; };
-		A35A8C0620142C3A0032C04E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35A8C0520142C3A0032C04E /* Images.xcassets */; };
 		A35A8C0820142D930032C04E /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8C0720142D930032C04E /* Misc.swift */; };
 		A35A8C0D2016310C0032C04E /* SimplePingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8C0C2016310C0032C04E /* SimplePingClient.swift */; };
 		A35A8C112016319F0032C04E /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = A35A8C102016319F0032C04E /* SimplePing.m */; };
@@ -61,7 +60,6 @@
 		A35A8BF6201429240032C04E /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
 		A35A8BF7201429240032C04E /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		A35A8BF8201429240032C04E /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
-		A35A8C0520142C3A0032C04E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A35A8C0720142D930032C04E /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		A35A8C0C2016310C0032C04E /* SimplePingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePingClient.swift; sourceTree = "<group>"; };
 		A35A8C0F2016319F0032C04E /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 		A35A8BF9201429240032C04E /* SpringApp */ = {
 			isa = PBXGroup;
 			children = (
-				A35A8C0520142C3A0032C04E /* Images.xcassets */,
 			);
 			path = SpringApp;
 			sourceTree = "<group>";
@@ -267,7 +264,7 @@
 				TargetAttributes = {
 					2608528D20107F0200446F1D = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -295,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2608529C20107F0200446F1D /* LaunchScreen.storyboard in Resources */,
-				A35A8C0620142C3A0032C04E /* Images.xcassets in Resources */,
 				2608529920107F0200446F1D /* Assets.xcassets in Resources */,
 				A35A8BFF201429250032C04E /* LoadingView.xib in Resources */,
 				2608529720107F0200446F1D /* Main.storyboard in Resources */,
@@ -342,7 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B2786D0B5D5D33A10EE025C /* [CP] Copy Pods Resources */ = {
@@ -524,12 +520,16 @@
 			baseConfigurationReference = F1E40D04AB8ED6FDDEFD96EE /* Pods-SpeedTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SpeedTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
 				PRODUCT_NAME = "乐发赛车";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SpeedTest/SpeedTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -541,12 +541,16 @@
 			baseConfigurationReference = 630A63D2FC08F8EF3BFC6EDE /* Pods-SpeedTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 52HXEA5KHB;
 				INFOPLIST_FILE = SpeedTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
 				PRODUCT_NAME = "乐发赛车";
+				PROVISIONING_PROFILE = "b60e6550-c985-4a74-a2de-1785b1cb7890";
+				PROVISIONING_PROFILE_SPECIFIER = speedtest_dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "SpeedTest/SpeedTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

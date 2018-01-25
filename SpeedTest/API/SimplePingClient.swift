@@ -26,7 +26,7 @@ class SimplePingClient:NSObject {
     func hostFormater (domain:String) -> String! {
         var formatedDomain = domain.replacingOccurrences(of: "http://", with: "")
         formatedDomain = formatedDomain.replacingOccurrences(of: "https://", with: "")
-        if( formatedDomain.last == "/") {
+        while formatedDomain.last == "/" {
             formatedDomain = String(formatedDomain.dropLast())
         }
         return formatedDomain
