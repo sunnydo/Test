@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cvz-md-x9F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qOp-vc-kAS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -450,8 +450,6 @@
                                 <exclude reference="1tM-mJ-2pz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4hW-Cn-Nos"/>
-                                <exclude reference="LpW-sX-BrB"/>
                                 <exclude reference="5vW-UB-pYc"/>
                                 <exclude reference="Q5X-mC-ZF2"/>
                                 <exclude reference="q0M-9n-x9g"/>
@@ -459,6 +457,8 @@
                                 <exclude reference="CQt-Rs-sU0"/>
                                 <exclude reference="Pyg-gU-mbf"/>
                                 <exclude reference="rFp-Bc-DvA"/>
+                                <exclude reference="4hW-Cn-Nos"/>
+                                <exclude reference="LpW-sX-BrB"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -468,8 +468,6 @@
                                 <include reference="1tM-mJ-2pz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4hW-Cn-Nos"/>
-                                <include reference="LpW-sX-BrB"/>
                                 <exclude reference="5vW-UB-pYc"/>
                                 <include reference="Q5X-mC-ZF2"/>
                                 <include reference="q0M-9n-x9g"/>
@@ -477,6 +475,8 @@
                                 <include reference="CQt-Rs-sU0"/>
                                 <include reference="Pyg-gU-mbf"/>
                                 <exclude reference="rFp-Bc-DvA"/>
+                                <include reference="4hW-Cn-Nos"/>
+                                <include reference="LpW-sX-BrB"/>
                             </mask>
                         </variation>
                     </view>
@@ -491,10 +491,117 @@
             </objects>
             <point key="canvasLocation" x="1941.5999999999999" y="-366.56671664167919"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dQr-i9-OCg">
+            <objects>
+                <viewController id="qOp-vc-kAS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SJJ-yt-7vG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载中 ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXf-Xd-tSM">
+                                <rect key="frame" x="146.5" y="321.5" width="84" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.359120518" green="0.318911165" blue="0.54411047700000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KXf-Xd-tSM" firstAttribute="centerX" secondItem="SJJ-yt-7vG" secondAttribute="centerX" id="4K6-UT-8iP"/>
+                            <constraint firstItem="KXf-Xd-tSM" firstAttribute="centerY" secondItem="SJJ-yt-7vG" secondAttribute="centerY" id="BA4-ZZ-c8h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bLX-O5-RIP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMA-4h-VYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1380" y="-68"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="Ts5-83-bRf">
+            <objects>
+                <viewController storyboardIdentifier="WebKitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qRR-Ch-pfV" customClass="WebKitViewController" customModule="乐发赛车" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RpW-Ut-pNg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42f-uJ-5OI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="606"/>
+                                <color key="backgroundColor" red="0.359120518" green="0.318911165" blue="0.54411047700000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqd-tm-XCM">
+                                <rect key="frame" x="0.0" y="626" width="123.5" height="41"/>
+                                <color key="backgroundColor" red="0.359120518" green="0.318911165" blue="0.54411047700000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sqd-tm-XCM" secondAttribute="height" multiplier="3:1" id="cBb-Uo-5iX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="乐发赛车新闻">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button1Pressed:" destination="qRR-Ch-pfV" eventType="touchUpInside" id="ILK-FZ-zF1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snn-wm-65G">
+                                <rect key="frame" x="125.5" y="626" width="124" height="41"/>
+                                <color key="backgroundColor" red="0.65848356490000004" green="0.43421795959999998" blue="0.6570897698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="乐发赛车视频">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button2Pressed:" destination="qRR-Ch-pfV" eventType="touchUpInside" id="1R6-Ql-Ml6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw4-ta-eu5">
+                                <rect key="frame" x="251.5" y="626" width="123.5" height="41"/>
+                                <color key="backgroundColor" red="0.65848356490000004" green="0.43421795959999998" blue="0.6570897698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="乐发赛车商城">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button3Pressed:" destination="qRR-Ch-pfV" eventType="touchUpInside" id="jsn-QR-BKm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tsK-7H-RA8" firstAttribute="trailing" secondItem="42f-uJ-5OI" secondAttribute="trailing" id="13p-Rg-eOY"/>
+                            <constraint firstItem="Yw4-ta-eu5" firstAttribute="width" secondItem="sqd-tm-XCM" secondAttribute="width" id="FWb-em-Lln"/>
+                            <constraint firstItem="Yw4-ta-eu5" firstAttribute="height" secondItem="sqd-tm-XCM" secondAttribute="height" id="IR3-RL-4vP"/>
+                            <constraint firstItem="Yw4-ta-eu5" firstAttribute="leading" secondItem="Snn-wm-65G" secondAttribute="trailing" constant="2" id="OLU-uX-VNW"/>
+                            <constraint firstItem="42f-uJ-5OI" firstAttribute="top" secondItem="tsK-7H-RA8" secondAttribute="top" id="XJh-We-8Yr"/>
+                            <constraint firstItem="sqd-tm-XCM" firstAttribute="top" secondItem="42f-uJ-5OI" secondAttribute="bottom" id="ZLm-EQ-xzG"/>
+                            <constraint firstItem="tsK-7H-RA8" firstAttribute="bottom" secondItem="Yw4-ta-eu5" secondAttribute="bottom" id="ZpJ-N2-7ld"/>
+                            <constraint firstItem="tsK-7H-RA8" firstAttribute="trailing" secondItem="Yw4-ta-eu5" secondAttribute="trailing" id="c4I-Jn-0Pu"/>
+                            <constraint firstItem="42f-uJ-5OI" firstAttribute="leading" secondItem="tsK-7H-RA8" secondAttribute="leading" id="cNe-r7-Hud"/>
+                            <constraint firstItem="sqd-tm-XCM" firstAttribute="leading" secondItem="tsK-7H-RA8" secondAttribute="leading" id="cWh-AW-W7I"/>
+                            <constraint firstItem="tsK-7H-RA8" firstAttribute="bottom" secondItem="Snn-wm-65G" secondAttribute="bottom" id="jr9-gH-PbM"/>
+                            <constraint firstItem="tsK-7H-RA8" firstAttribute="bottom" secondItem="sqd-tm-XCM" secondAttribute="bottom" id="seb-Nm-ImM"/>
+                            <constraint firstItem="Snn-wm-65G" firstAttribute="width" secondItem="sqd-tm-XCM" secondAttribute="width" id="z2P-3b-hYy"/>
+                            <constraint firstItem="Snn-wm-65G" firstAttribute="height" secondItem="sqd-tm-XCM" secondAttribute="height" id="ziq-B7-pWu"/>
+                            <constraint firstItem="Snn-wm-65G" firstAttribute="leading" secondItem="sqd-tm-XCM" secondAttribute="trailing" constant="2" id="zvt-Co-GMZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tsK-7H-RA8"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="sqd-tm-XCM" id="Wlj-d8-faN"/>
+                        <outlet property="button2" destination="Snn-wm-65G" id="HJH-sp-9gY"/>
+                        <outlet property="button3" destination="Yw4-ta-eu5" id="2Il-dv-chg"/>
+                        <outlet property="webView" destination="42f-uJ-5OI" id="9WO-Nj-p7g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97z-sa-imH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-730.5" y="-6.5"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NeE-6N-k8l">
             <objects>
-                <tabBarController id="Cvz-md-x9F" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cvz-md-x9F" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UhG-fp-GbN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

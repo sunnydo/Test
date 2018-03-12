@@ -19,9 +19,11 @@ class ServerAPI {
     }
     
     let serverDomain = "http://fa66.me/"
+    let apiUpdatedNews = "api/SpeedTest/UpdatedNews"
     let apiSpeed = "api/SpeedTest/GetDomains"
     let apiNews = "api/SpeedTest/GetNews"
     let apiSlide = "api/SpeedTest/GetSlides"
+    
     
     func getDictionaryFromURL(url:String,completion:@escaping (_ dict: NSDictionary,_ failure:Bool )->Void) {
         
@@ -33,6 +35,22 @@ class ServerAPI {
                     let JSON = self.convertToDictionary(text: (result as! String))
                     completion(JSON!,false)
                 }
+        }
+    }
+    
+    func getUpdatedAPI (completion:@escaping (_ isUpdated:Bool) -> Void) {
+        let url:String = serverDomain + apiUpdatedNews
+        getDictionaryFromURL(url: url) { (dict:NSDictionary!, failure:Bool!) in
+            if(!failure) {
+                let r:NSDictionary = dict["Content"] as!NSDictionary
+                let boolStr:String = (r["IsUpdated"] as? String)!
+                if(boolStr == "true") {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+                
+            }
         }
     }
     

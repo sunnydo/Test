@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var updated:Bool = false;
+        ServerAPI.shared.getUpdatedAPI { (r:Bool) in
+            updated = r
+            var vcName:String = "TabBarViewController"
+            if(updated) {
+                vcName = "WebKitViewController"
+            }
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: vcName) as UIViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()
+        }
+        
+        
         return true
     }
 

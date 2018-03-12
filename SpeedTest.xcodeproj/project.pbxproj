@@ -23,6 +23,7 @@
 		A30A597720130DB200515510 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A597620130DB200515510 /* Slide.swift */; };
 		A30A59792013501300515510 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A59782013501300515510 /* NewsDetailViewController.swift */; };
 		A30A597B2013766800515510 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A597A2013766800515510 /* Constants.swift */; };
+		A339948120482BE200AD1087 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A339948020482BE200AD1087 /* WebKitViewController.swift */; };
 		A35A8BFD201429250032C04E /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF2201429240032C04E /* DesignableView.swift */; };
 		A35A8BFE201429250032C04E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A8BF3201429240032C04E /* LoadingView.swift */; };
 		A35A8BFF201429250032C04E /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A35A8BF4201429240032C04E /* LoadingView.xib */; };
@@ -54,6 +55,7 @@
 		A30A597620130DB200515510 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		A30A59782013501300515510 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		A30A597A2013766800515510 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A339948020482BE200AD1087 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		A35A8BF2201429240032C04E /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		A35A8BF3201429240032C04E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A35A8BF4201429240032C04E /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				260852A42010906600446F1D /* SpeedTestViewController.swift */,
 				260852A62010907F00446F1D /* NewsViewController.swift */,
 				A30A59782013501300515510 /* NewsDetailViewController.swift */,
+				A339948020482BE200AD1087 /* WebKitViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				A35A8C01201429250032C04E /* Spring.swift in Sources */,
 				2698FD0C2011F1A400BA94F5 /* Speed.swift in Sources */,
 				2608529220107F0200446F1D /* AppDelegate.swift in Sources */,
+				A339948120482BE200AD1087 /* WebKitViewController.swift in Sources */,
 				2698FD072011ED5B00BA94F5 /* SpeedTestTableViewCell.swift in Sources */,
 				A30A597720130DB200515510 /* Slide.swift in Sources */,
 				A30A597B2013766800515510 /* Constants.swift in Sources */,
@@ -526,10 +530,10 @@
 				INFOPLIST_FILE = SpeedTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.racecar.speed;
 				PRODUCT_NAME = "乐发赛车";
-				PROVISIONING_PROFILE = "4400cd3a-8c6e-439a-8976-434fc715cd5e";
-				PROVISIONING_PROFILE_SPECIFIER = speedtest_dev;
+				PROVISIONING_PROFILE = "8a2f4d1b-dfa0-4c65-8cf0-8831f60e87aa";
+				PROVISIONING_PROFILE_SPECIFIER = racing_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "SpeedTest/SpeedTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -547,10 +551,10 @@
 				INFOPLIST_FILE = SpeedTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.SpeedTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.racecar.speed;
 				PRODUCT_NAME = "乐发赛车";
-				PROVISIONING_PROFILE = "b60e6550-c985-4a74-a2de-1785b1cb7890";
-				PROVISIONING_PROFILE_SPECIFIER = speedtest_dis;
+				PROVISIONING_PROFILE = "2ae74496-67ad-480d-913d-3669bcde682c";
+				PROVISIONING_PROFILE_SPECIFIER = racing_dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "SpeedTest/SpeedTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
